@@ -1,0 +1,40 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd"> 
+
+
+<!--
+ SPEL 方式： （了解）
+ 
+ Spring expression lanuage 
+ 
+ 
+  - 基本类型
+  
+  
+  - 引用类型 
+ 
+
+  -->
+<bean name="carName" class="com.shop.domain.Car">
+  <property name="name" value="保时捷"></property>
+  <property name="color" value="黄色"></property>
+ </bean>
+ 
+ <!--
+   spel方式：其实就是将以前的set方法注入 结合   #{}  语法一起来实现的
+   
+   
+   - 注入基本类型：<property name="name" value="#{carName.name}"></property>
+   
+   - 注入引用类型：  <property name="car" ref="carName"></property>
+ 
+   -->
+ <bean name="user"  class="com.shop.domain.User" scope="prototype">
+  <property name="name" value="#{carName.name}"></property>
+  <property name="car" ref ="carName"></property>
+ </bean>           
+</beans>

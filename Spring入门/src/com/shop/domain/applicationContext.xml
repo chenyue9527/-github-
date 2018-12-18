@@ -1,0 +1,43 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd"> 
+
+
+<!--
+ property属性用来进行set方法注入
+ 
+ 1)注入基本类型
+ name 属性：填写你要注入的字段名称
+ 
+ value属性：填写你要注入的字段名称对应的值
+ 
+ 2)注入引用类型
+ 
+ 2.1.先将要注入的对象使用spring容器创建出来
+ 
+ 2.2.再将创建好的对象注入进来
+ 
+ 
+
+ 
+ 
+ 
+ 
+  -->
+   
+
+<!--让spring创建出来的car对象  --> 
+ <bean name="carName" class="com.shop.domain.Car">
+  <property name="name" value="保时捷"></property>
+  <property name="color" value="黄色"></property>
+ </bean>  
+ 
+   
+ <bean name="user"  class="com.shop.domain.User" scope="prototype">
+   <property name="name" value="潘金莲"></property>
+   <property name="age" value="18"></property>
+   <property name="car" ref="carName"></property>
+ </bean>           
+</beans>

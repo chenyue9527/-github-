@@ -1,0 +1,50 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd"> 
+
+
+<!--
+ property属性用来进行构造方法注入
+ 
+ <constructor-arg>
+ 
+ 
+ 1)注入基本类型
+  
+
+ 
+ 2)注入引用类型
+ 
+
+  -->
+
+<!--让spring创建出来的car对象  --> 
+ <bean name="carName" class="com.shop.domain.Car">
+  <property name="name" value="保时捷"></property>
+  <property name="color" value="黄色"></property>
+ </bean>  
+ 
+ <!--
+   
+ constructor-arg标签用来定义spring框架注入属性值的时候使用构造函数
+ 
+ name属性：填写你要注入的属性字段名
+ 
+ value属性:填写你要注入的属性字段对应的值
+ 
+ index属性：用来控制构造函数中参数的顺序   （默认从0开始）
+ 
+ type 属性：用来控制构造函数中参数的类型
+ 
+ 
+ 
+   -->  
+ <bean name="user"  class="com.shop.domain.User" scope="prototype">
+ 
+  <constructor-arg name="name" value="10" index="0" type="java.lang.Integer"></constructor-arg>
+  <constructor-arg name="car" ref="carName" index="1"></constructor-arg>
+  
+ </bean>           
+</beans>

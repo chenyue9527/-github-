@@ -1,0 +1,88 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd"> 
+<bean name="carName" class="com.shop.domain.Car">
+  <property name="name" value="保时捷"></property>
+  <property name="color" value="黄色"></property>
+ </bean>
+ 
+ <!--
+   spring 中注入复杂类型
+   
+   数组: 注入基本类型 （value） 引用类型 （ref）
+  
+  list:
+  
+  map
+  
+  properties
+  
+  
+   
+   
+  
+   
+   
+   -->
+<!--  <bean name="cb"  class="com.shop.domain.CollectionBean" >
+  <property name="arr">
+   <array>
+     <value>杰克</value>
+      <value>18</value>
+      <ref bean="carName"/>
+   </array>
+  </property>
+ </bean>  -->       
+ 
+ 
+<!--  <bean name="cb"  class="com.shop.domain.CollectionBean" >
+  <property name="list">
+     <list>
+       <value>汤姆森</value>
+       <value>100</value>
+       <ref bean="carName"/>
+     </list>
+  </property>
+ </bean>  -->
+ 
+ 
+ 
+ 
+<!--  <bean name="car" class="com.shop.domain.Car">
+   <property name="name" value="保时捷"></property>
+   <property name="color" value="黄色"></property>
+ </bean>
+ 
+  <bean name="car2" class="com.shop.domain.Car">
+   <property name="name" value="保时捷2"></property>
+   <property name="color" value="黄色2"></property>
+ </bean>
+ 
+ 
+  <bean name="cb"  class="com.shop.domain.CollectionBean" >
+  <property name="map">
+    <map>
+      <entry key="name" value="tom"></entry>
+      <entry key-ref="car" value-ref="car2"></entry>
+       <entry key="车" value-ref="car2"></entry>
+    </map>
+  </property>
+ </bean>    -->
+ 
+ 
+ 
+ <!--
+    注意：props 里面的prop 标签中没有value属性，如果想要填写value值，请填写在 标签中间位置！！！
+     <prop key="name">杰克</prop>
+   -->
+ <bean name="cb"  class="com.shop.domain.CollectionBean" >
+  <property name="pro">
+   <props>
+    <prop key="name">杰克</prop>
+  </props>
+  </property>
+ </bean>           
+</beans>

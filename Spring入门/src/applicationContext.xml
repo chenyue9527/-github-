@@ -1,0 +1,10 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd">         
+  <!-- 引入其他spring配置文件 
+   resource属性：填写要引入配置文件的路径
+  -->
+ <import resource="com/shop/domain/applicationContext5.xml"/>  
+</beans>
