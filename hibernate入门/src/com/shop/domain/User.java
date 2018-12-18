@@ -13,6 +13,8 @@ public class User {
 	private int state;
 	// 激活码
 	private String code;
+	
+	private String test;
 
 	public int getUid() {
 		return uid;
@@ -99,6 +101,14 @@ public class User {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getTest() {
+		return test;
+	}
+
+	public void setTest(String test) {
+		this.test = test;
 	}
 
 }
