@@ -22,8 +22,13 @@ public class User {
 	
 	private String test4;
 	
+
 	public void lisi(){
-		
+	
+	}
+	
+	public void zhangsan() {
+    
 	}
 	
 	public int getUid() {
