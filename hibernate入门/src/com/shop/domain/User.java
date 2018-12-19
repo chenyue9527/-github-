@@ -22,6 +22,10 @@ public class User {
 	
 	private String test4;
 	
+	public void zhangsan() {
+		
+	}
+	
 	public int getUid() {
 		return uid;
 	}
