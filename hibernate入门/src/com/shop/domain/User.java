@@ -19,7 +19,9 @@ public class User {
 	private String test2;
 	
 	private String test3;
-
+	
+	private String test4;
+	
 	public int getUid() {
 		return uid;
 	}
